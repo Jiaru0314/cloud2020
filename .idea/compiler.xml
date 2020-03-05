@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="cloud-api-commons" />
         <module name="cloud-provider-payment8001" />
+        <module name="cloud-eureka-server7001" />
         <module name="cloud-consumer-order80" />
       </profile>
     </annotationProcessing>
