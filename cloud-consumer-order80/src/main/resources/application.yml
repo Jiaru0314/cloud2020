@@ -1,0 +1,7 @@
+server:
+  port: 80
+
+spring:
+  devtools:
+    restart:
+      enabled: true
