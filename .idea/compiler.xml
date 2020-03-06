@@ -10,6 +10,7 @@
         <module name="cloud-eureka-server7002" />
         <module name="cloud-api-commons" />
         <module name="cloud-eureka-server7001" />
+        <module name="cloud-provider-payment8004" />
         <module name="cloud-provider-payment8002" />
         <module name="cloud-provider-payment8001" />
         <module name="cloud-consumer-order80" />

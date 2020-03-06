@@ -6,7 +6,11 @@ import com.xzq.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @ClassName: PaymentController
@@ -20,6 +24,9 @@ import org.springframework.web.bind.annotation.*;
 public class PaymentController {
     @Autowired
     private PaymentService paymentService;
+
+    @Autowired
+    private EurekaDiscoveryClient discoveryClient;
 
     @Value("${server.port}")
     private String SERVER_PORT;
@@ -47,5 +54,16 @@ public class PaymentController {
         }
     }
 
+    @GetMapping("/discovery")
+    public void discovery() {
+        List<String> services = discoveryClient.getServices();
+        for (String element : services) {
+            log.info("element:\t" + element);
+        }
 
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        for (ServiceInstance instance : instances) {
+            log.info(instance.getServiceId() + "\t" + instance.getHost() + "\t" + instance.getPort() + "\t" + instance.getUri());
+        }
+    }
 }

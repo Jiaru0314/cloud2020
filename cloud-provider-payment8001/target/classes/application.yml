@@ -11,10 +11,6 @@ spring:
     username: root
     password: 1234
 
-  devtools:
-    restart:
-      enabled: true #是否支持热部署
-
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.xzq.springcloud.entities  #所有entity别名所在包
@@ -25,4 +21,8 @@ eureka:
     fetch-registry: true #是否从EurekaServer抓取已有的注册信息，默认为true,单节点无所谓,集群必须设置为true才能配合ribbon使用负载均衡
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/, http://eureka7002.com:7002/eureka/ # 入驻地址
-#      defaultZone: http://localhost:7001/eureka/ # 入驻地址
+  instance:
+    instance-id: payment8001
+    prefer-ip-address: true
+#    lease-renewal-interval-in-seconds: 1 # eureka客户端向服务端发送心跳的时间间隔 单位秒 默认30
+#    lease-expiration-duration-in-seconds: 2 # eureka

@@ -1,11 +1,6 @@
 server:
   port: 80
 
-spring:
-  devtools:
-    restart:
-      enabled: true
-
 eureka:
   client:
     register-with-eureka: true #表示向注册中心注册自己 默认为true
@@ -13,3 +8,9 @@ eureka:
     service-url:
       #defaultZone: http://localhost:7001/eureka/ # 入驻地址
       defaultZone: http://eureka7001.com:7001/eureka/, http://eureka7002.com:7002/eureka/ # 入驻地址
+  instance:
+    instance-id: order80
+    prefer-ip-address: true
+spring:
+  application:
+    name: cloud-order-service
