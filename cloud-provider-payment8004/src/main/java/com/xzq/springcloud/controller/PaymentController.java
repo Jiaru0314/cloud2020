@@ -1,7 +1,6 @@
 package com.xzq.springcloud.controller;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +20,7 @@ public class PaymentController {
     private String SERVER_PORT;
 
     @RequestMapping("/zk")
-    public String paymentZK(@PathVariable("id") Long id) {
+    public String paymentZK() {
         return "springcloud with zookeeper :" + SERVER_PORT + "\t" + UUID.randomUUID().toString();
     }
 }
