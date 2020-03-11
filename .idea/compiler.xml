@@ -30,5 +30,6 @@
         <module name="cloud-config-client3355" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>
