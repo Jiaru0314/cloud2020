@@ -1,0 +1,11 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/ #入驻地址 不集群
+feign:
+  hystrix:
+    enabled: true #在feign中开启hystrix

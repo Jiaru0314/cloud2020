@@ -21,6 +21,6 @@ public class PaymentController {
 
     @RequestMapping("/zk")
     public String paymentZK() {
-        return "springcloud with zookeeper :" + SERVER_PORT + "\t" + UUID.randomUUID().toString();
+        return "com.com.springcloud with zookeeper :" + SERVER_PORT + "\t" + UUID.randomUUID().toString();
     }
 }

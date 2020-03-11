@@ -1,5 +1,6 @@
 package com.xzq.springcloud.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.xzq.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,22 @@ public class PaymentController {
     @GetMapping("/hystrix/timeout/{id}")
     public String paymentInfo_TimeOut(@PathVariable("id") Integer id) {
         final String result = paymentService.paymentInfo_TimeOut(id);
+        log.info("***result:" + result);
+        return result;
+    }
+
+
+    /**
+     * 服务熔断
+     * http://localhost:8001/payment/circuit/1
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("/circuit/{id}")
+    @HystrixCommand
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id) {
+        String result = paymentService.paymentCircuitBreaker(id);
         log.info("***result:" + result);
         return result;
     }

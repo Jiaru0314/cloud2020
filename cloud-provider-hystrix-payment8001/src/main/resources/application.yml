@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-provider-hystrix-service-payment #服务名称
+    name: cloud-provider-hystrix-payment #服务名称
 
 eureka:
   client:
