@@ -76,7 +76,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!-- MySql -->
+            <!-- MySql8 -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
