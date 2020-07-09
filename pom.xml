@@ -88,7 +88,7 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.verison}</version>
             </dependency>
-            <!-- mybatis-springboot整合呀 -->
+            <!-- mybatis-springboot -->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
