@@ -37,7 +37,7 @@
         <module>cloudalibaba-config-nacos-client3377</module>
     </modules>
 
-    <!--统一管理jar包和版本-->
+    <!--统一管理jar包和版本11-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
